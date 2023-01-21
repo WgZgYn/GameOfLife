@@ -49,11 +49,11 @@ cmake_ninja_workdir = C$:/Users/HIPAA/CLionProjects/GameOfLife/cmake-build-debug
 
 build cmake_object_order_depends_target_GameOfLife: phony || CMakeFiles/GameOfLife.dir
 
-build CMakeFiles/GameOfLife.dir/main.cpp.obj: CXX_COMPILER__GameOfLife_Debug C$:/Users/HIPAA/CLionProjects/GameOfLife/main.cpp || cmake_object_order_depends_target_GameOfLife
-  DEP_FILE = CMakeFiles\GameOfLife.dir\main.cpp.obj.d
+build CMakeFiles/GameOfLife.dir/src/main.cpp.obj: CXX_COMPILER__GameOfLife_Debug C$:/Users/HIPAA/CLionProjects/GameOfLife/src/main.cpp || cmake_object_order_depends_target_GameOfLife
+  DEP_FILE = CMakeFiles\GameOfLife.dir\src\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\GameOfLife.dir
-  OBJECT_FILE_DIR = CMakeFiles\GameOfLife.dir
+  OBJECT_FILE_DIR = CMakeFiles\GameOfLife.dir\src
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/GameOfLife.dir/main.cpp.obj: CXX_COMPILER__GameOfLife_Debug C$:
 #############################################
 # Link the executable GameOfLife.exe
 
-build GameOfLife.exe: CXX_EXECUTABLE_LINKER__GameOfLife_Debug CMakeFiles/GameOfLife.dir/main.cpp.obj
+build GameOfLife.exe: CXX_EXECUTABLE_LINKER__GameOfLife_Debug CMakeFiles/GameOfLife.dir/src/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\GameOfLife.dir

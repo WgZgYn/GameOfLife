@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.24"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "Release",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "GameOfLife::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GameOfLife-Debug-b1e785ad9b1a0532ce9e.json",
+					"jsonFile" : "target-GameOfLife-Release-4aaac9b9ffacb8a58f8e.json",
 					"name" : "GameOfLife",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/HIPAA/CLionProjects/GameOfLife/cmake-build-debug",
+		"build" : "C:/Users/HIPAA/CLionProjects/GameOfLife/cmake-build-release",
 		"source" : "C:/Users/HIPAA/CLionProjects/GameOfLife"
 	},
 	"version" : 

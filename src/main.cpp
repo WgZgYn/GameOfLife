@@ -8,21 +8,31 @@ enum status {
     Active = 1
 };
 
-void change(int p[][20], int n[][20], int x, int y) {
+bool change(int p[][20], int n[][20], int x, int y) {
+    bool reflash = false;
     int judge = -1 * p[x][y];
+
+    //accumulate the Active cell's num
     for (int i = std::max(x - 1, 0); i <= std::min(x + 1, 19); i++) {
         for (int k = std::max(y - 1, 0); k <= std::min(y + 1, 19); k++) {
             if (p[i][k] == Active)
                 judge++;
         }
     }
+
     if (p[x][y] == Active) {
-        if (judge < 2 || judge > 3)
+        if (judge < 2 || judge > 3) {
+            reflash = true;
             n[x][y] = Dead;
-        else
+        } else {
             n[x][y] = p[x][y];
-    } else if (judge == 3)
+        }
+    } else if (judge == 3) {
+        reflash = true;
         n[x][y] = Active;
+    }
+
+    return reflash;
 }
 
 void print(int pInt[][20]) {
@@ -61,29 +71,28 @@ int main() {
     std::cout << "----------------" << std::endl;
     std::cout << "   " << gen++ << "   " << std::endl;
     print(pInt);
+    bool re;
 
-    while(true)
-    {
+    do {
+        re = false;
         Sleep(1000 / 30);
         system("cls");
-        if(gen % 2 == 0) {
+        if (gen % 2 == 0) {
             memset(newInt, 0, sizeof(newInt));
             for (int i = 0; i < 20; i++) {
                 for (int k = 0; k < 20; k++) {
-                    change(pInt, newInt, i, k);
+                    re += change(pInt, newInt, i, k);
                 }
             }
 
             std::cout << "----------------" << std::endl;
             std::cout << "   " << gen++ << "   " << std::endl;
             print(newInt);
-        }
-        else
-        {
+        } else {
             memset(pInt, 0, sizeof(pInt));
             for (int i = 0; i < 20; i++) {
                 for (int k = 0; k < 20; k++) {
-                    change(newInt, pInt, i, k);
+                    re += change(newInt, pInt, i, k);
                 }
             }
 
@@ -91,6 +100,7 @@ int main() {
             std::cout << "   " << gen++ << "   " << std::endl;
             print(pInt);
         }
-    }
+    } while (re);
 
+    system("pause");
 }
